@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Paper, TextField } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
 import Logo from "../img/YoutubeLogo.png";
 
 class SearchBar extends Component {
