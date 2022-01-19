@@ -6,26 +6,24 @@ const VideoDetails = ({ video }) => {
 
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
   return (
-    <React.Fragment>
-      <Paper elevation={6} style={{ height: "70%" }}>
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <div>
         <iframe
           frameBorder="0"
-          height="100%"
+          height="550px"
           width="100%"
           title="Video Player"
           src={videoSrc}
         />
-      </Paper>
-      <Paper elevation={6} style={{ padding: "15px" }}>
-        <Typography variant="h4">
-          {video.snippet.title} - {video.snippet.channelTitle}
-        </Typography>
-        <Typography variant="subtitle1">
+      </div>
+      <div style={{ padding: "15px" }}>
+        <Typography variant="h5">{video.snippet.title}</Typography>
+        <Typography variant="subtitle1" style={{ color: "#222626" }}>
           {video.snippet.channelTitle}
         </Typography>
         <Typography variant="subtitle2">{video.snippet.description}</Typography>
-      </Paper>
-    </React.Fragment>
+      </div>
+    </div>
   );
 };
 

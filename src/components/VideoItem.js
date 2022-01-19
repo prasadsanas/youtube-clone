@@ -5,15 +5,20 @@ const VideoItem = ({ video, onVideoSelect }) => {
   return (
     <Grid item xs={12}>
       <Paper
-        style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+        style={{
+          display: "flex",
+          cursor: "pointer",
+          height: "130px",
+          padding: "10px",
+        }}
         onClick={() => onVideoSelect(video)}
       >
         <img
-          style={{ marginRight: "20px" }}
+          style={{ width: "60%" }}
           alt="thumbnail"
           src={video.snippet.thumbnails.medium.url}
         />
-        <Typography variant="subtitle1">
+        <Typography style={{ fontSize: "12px", marginLeft: "10px" }}>
           <b>{video.snippet.title}</b>
         </Typography>
       </Paper>

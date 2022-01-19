@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Paper, TextField } from "@material-ui/core";
+import Logo from "../img/YoutubeLogo.png";
 
 class SearchBar extends Component {
   state = {
@@ -20,11 +21,33 @@ class SearchBar extends Component {
   };
   render() {
     return (
-      <Paper elevation={6} style={{ padding: "15px" }}>
-        <form onSubmit={this.handleSubmit}>
-          <TextField fullWidth label="Search..." onChange={this.handleChange} />
+      <div style={{ display: "flex", textAlign: "center" }}>
+        <div>
+          <img
+            src={Logo}
+            alt="logo"
+            width="100px"
+            style={{
+              cursor: "pointer",
+              marginLeft: "100px",
+            }}
+          />
+        </div>
+        <form
+          onSubmit={this.handleSubmit}
+          style={{
+            width: "50%",
+            border: "1px solid",
+            height: "30px",
+            alignItems: "end",
+            padding: "5px 5px",
+            marginLeft: "200px",
+            marginTop: "5px",
+          }}
+        >
+          <TextField fullWidth onChange={this.handleChange} />
         </form>
-      </Paper>
+      </div>
     );
   }
 }

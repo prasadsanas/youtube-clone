@@ -15,14 +15,14 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    this.handleSubmit("Javascript for beginner");
+    this.handleSubmit("Crypto currency");
   }
 
   handleSubmit = async (searchTerm) => {
     const response = await youtube.get("search", {
       params: {
         part: "snippet",
-        maxResult: 10,
+        maxResult: 15,
         key: "AIzaSyAbUkg_y-XuGOdsRmMFU1Q1F2TVT5Viq34",
         q: searchTerm,
       },
@@ -37,9 +37,13 @@ class App extends React.Component {
   render() {
     const { selectedVideo, video } = this.state;
     return (
-      <Grid justifyContent="center" container spacing={10}>
+      <Grid
+        justifyContent="center"
+        container-fluid
+        style={{ width: "98%", margin: "auto" }}
+      >
         <Grid item xs={12}>
-          <Grid container spacing={10}>
+          <Grid container spacing={1}>
             <Grid item xs={12}>
               <SearchBar onFormSubmit={this.handleSubmit} />
             </Grid>
